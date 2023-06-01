@@ -45,7 +45,7 @@ namespace L
         
         gettimeofday(&curTime, NULL);
         strftime(tStamp, sizeof(tStamp), "%F %T", localtime(&curTime.tv_sec));
-        snprintf(ms, 5, ".%03d", (int)curTime.tv_usec/1000);
+        snprintf(ms, 5, ".%03u", (int)curTime.tv_usec/1000);
         sstime << tStamp << ms;        
         return sstime.str();
     }
